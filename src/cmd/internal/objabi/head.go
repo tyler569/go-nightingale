@@ -48,6 +48,7 @@ const (
 	Hsolaris
 	Hwindows
 	Haix
+	Hnightingale
 )
 
 func (h *HeadType) Set(s string) error {
@@ -74,6 +75,8 @@ func (h *HeadType) Set(s string) error {
 		*h = Hsolaris
 	case "windows":
 		*h = Hwindows
+	case "nightingale":
+		*h = Hnightingale // NGTODO linux?
 	default:
 		return fmt.Errorf("invalid headtype: %q", s)
 	}
@@ -104,6 +107,8 @@ func (h *HeadType) String() string {
 		return "solaris"
 	case Hwindows:
 		return "windows"
+	case Hnightingale:
+		return "nightingale"
 	}
 	return fmt.Sprintf("HeadType(%d)", *h)
 }
