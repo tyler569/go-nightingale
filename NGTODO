@@ -1,0 +1,6 @@
+
+- generate syscall constants
+- generate syscalls
+
+- runtime: `go generate`
+  - generate zgoos_nightingale.go is the next step
