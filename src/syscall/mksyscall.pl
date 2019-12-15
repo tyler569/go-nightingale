@@ -27,6 +27,7 @@ my $_32bit = "";
 my $plan9 = 0;
 my $darwin = 0;
 my $openbsd = 0;
+my $nightingale = 0;
 my $netbsd = 0;
 my $dragonfly = 0;
 my $arm = 0; # 64-bit value should use (even, odd)-pair
@@ -49,6 +50,10 @@ if($ARGV[0] eq "-darwin") {
 }
 if($ARGV[0] eq "-openbsd") {
 	$openbsd = 1;
+	shift;
+}
+if($ARGV[0] eq "-nightingale") {
+	$nightingale = 1;
 	shift;
 }
 if($ARGV[0] eq "-netbsd") {
@@ -254,7 +259,7 @@ while(<>) {
 	# System call number.
 	my $funcname = "";
 	if($sysname eq "") {
-		$sysname = "SYS_$func";
+        $sysname = "SYS_$func";
 		$sysname =~ s/([a-z])([A-Z])/${1}_$2/g;	# turn FooBar into Foo_Bar
 		$sysname =~ y/a-z/A-Z/;
 		if($darwin) {
