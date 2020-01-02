@@ -6,6 +6,8 @@ package syscall
 
 const (
 	// syscall numbers
+	// These must stay sorted relative to
+	// include/ng/syscall_consts.h
 	NG_INVALID = iota
 	NG_DEBUGPRINT
 	NG_EXIT
