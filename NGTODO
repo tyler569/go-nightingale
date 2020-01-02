@@ -1,12 +1,18 @@
 
-- generate syscall constants
-- generate syscalls
-
 - needs implementation / attention:
 
 current failures:
- - getRandomData
- - gsignalStack
- - sigset
- - mOS
+hermes::bin (master) => GOOS=nightingale ./go build ./test.go 
+# runtime
+../src/runtime/lock_futex.go:102:3: undefined: futexsleep
+../src/runtime/lock_futex.go:112:3: undefined: futexwakeup
+../src/runtime/lock_futex.go:136:2: undefined: futexwakeup
+../src/runtime/lock_futex.go:151:3: undefined: futexsleep
+../src/runtime/lock_futex.go:174:4: undefined: futexsleep
+../src/runtime/lock_futex.go:193:3: undefined: futexsleep
+../src/runtime/panic.go:1171:4: undefined: crash
+../src/runtime/panic.go:1212:3: undefined: crash
+../src/runtime/runtime2.go:481:16: undefined: gsignalStack
+../src/runtime/runtime2.go:482:16: undefined: sigset
+../src/runtime/panic.go:1212:3: too many errors
 

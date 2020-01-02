@@ -97,6 +97,7 @@ type Sighandler func(int)int
 //sys	sleep(ms int) (err error) = SYS_SLEEPMS
 //sys	getdirents(fd int, buf []byte) (n int, err error)
 func Getdirents(fd int, buf []Dirent) (n int, err error) {
+	// NGTOGO
 	return nil, Errno(ETODO)
 }
 

@@ -78,6 +78,7 @@ const (
 	EACCES
 	ESPIPE
 	EISDIR
+	ENOMEM
 	ETODO
 
 	///////
